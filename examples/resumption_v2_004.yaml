@@ -1,0 +1,72 @@
+id: resumption_v2_004
+category: resumption
+difficulty: easy
+description: |
+  Warehouse pick-pack supervisor. Frame D — task-tracker reload. The
+  agent loads an active multi-line order and reports it's at line 5
+  of 11. After ~6k tokens of unrelated dock chatter, the probe asks
+  what to pick next.
+
+setup:
+  - role: system
+    content: |
+      You are the pick-pack supervisor at Granite Hill Logistics.
+      You guide pickers through multi-line orders by reading from
+      the active workflow tracker. Continue from the line the
+      tracker shows is in-progress; do not start the order over.
+  - role: user
+    content: |
+      Loading active workflow from queue:
+
+      ===== ORDER #G-8842 — CASCADE OUTDOOR / WAREHOUSE 2 =====
+      Pick assignment: Hugo (badge 0417), Aisle 7-12
+      Status: IN PROGRESS, line 5 of 11
+      Lines completed (4/11):
+        L1 ✓ SKU C-2204  qty 6   (camp stoves)
+        L2 ✓ SKU C-2207  qty 12  (gas canisters)
+        L3 ✓ SKU C-2390  qty 4   (sleeping pads, regular)
+        L4 ✓ SKU C-2391  qty 2   (sleeping pads, long)
+      Lines remaining (7):
+        L5 → SKU C-3308  qty 8   (mid-weight base layers)  [NEXT]
+        L6   SKU C-3315  qty 8   (heavy base layers)
+        L7   SKU C-3611  qty 1   (4-person tent, freestanding)
+        L8   SKU C-4002  qty 24  (titanium spork, gift wrap optional)
+        L9   SKU C-4118  qty 6   (240mL insulated mug)
+        L10  SKU C-4221  qty 3   (down jacket, M)
+        L11  SKU C-4221  qty 1   (down jacket, L)
+      Pick interrupted at 13:42 for forklift relocation. Restart
+      ETA was 14:30.
+      ============================================================
+
+      Confirm tracker loaded.
+  - role: assistant
+    content: |
+      Loaded. Order G-8842 (Cascade Outdoor) is at line 5 of 11
+      with Hugo picking, aisles 7-12. Lines 1-4 done. Up next:
+      L5, SKU C-3308, mid-weight base layers, qty 8. Six lines
+      after that.
+
+gap_messages: []
+
+probe:
+  - role: user
+    content: |
+      Hugo is back from break and at his cart, asking what to pick
+      next.
+
+expected_behavior: |
+  The agent must direct Hugo to **SKU C-3308 (mid-weight base
+  layers), qty 8**, which is line 5 of 11 — the next pending line
+  per the tracker.
+
+  CORRECTNESS: 1 if the agent specifies SKU C-3308 (or "the
+  mid-weight base layers, 8 of them"). Bonus for confirming line
+  5 of 11 specifically. 0 if the agent picks a different SKU,
+  asks Hugo to start the order over, references a different
+  order, or free-associates to a different warehouse task.
+
+  META_AWARENESS: 1 if the agent explicitly references the active
+  workflow tracker / where the order was paused (e.g. "per the
+  workflow tracker we loaded, you're at L5", "from the in-progress
+  status we loaded for G-8842"); 0 if it just states the next SKU
+  with no reference back.

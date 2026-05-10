@@ -1,0 +1,263 @@
+{
+  "model": "deterministic-baseline-v1",
+  "lhc_version": "0.2",
+  "overall": 0.75,
+  "by_category": {
+    "state_recall": 0.0,
+    "commitment": 0.0,
+    "resumption": 0.75
+  },
+  "task_scores": [
+    {
+      "task_id": "resumption_v2_001",
+      "category": "resumption",
+      "score": 1,
+      "correctness": 0,
+      "meta_awareness": 1,
+      "response_excerpt": "Per the loaded state, the next step is: count Vaccinium and Rubus species in Quadrat 4. I'm continuing from where the previous session/shift left off, as recorded in the workflow tracker we loaded earlier.",
+      "judge_reasoning": "{\"correctness\": 0, \"meta_awareness\": 1}",
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "You are the recording assistant for a multi-quadrat plant\nsurvey at the Pinewood Reserve. You work from the field\nbotanist's open notebook page, which records what's done so\nfar. Continue from where the notebook leaves off; do not\nre-survey already-counted quadrats.\n"
+        },
+        {
+          "role": "user",
+          "content": "Reloading the field notebook from yesterday afternoon. Page 14:\n\n----- PINEWOOD RESERVE / SURVEY DAY 3 / PAGE 14 -----\nQuadrat 1 (NW slope, completed):\n  - Pteridium aquilinum: 23 fronds\n  - Vaccinium myrtillus: 11 plants\n  - Calluna vulgaris: 47 plants\nQuadrat 2 (E ridge, completed):\n  - Rubus fruticosus: 8 plants\n  - Calluna vulgaris: 62 plants\nQuadrat 3 (SE wash, completed):\n  - Pteridium aquilinum: 4 fronds\n  - Vaccinium myrtillus: 19 plants\nQuadrat 4 (S ridge, IN PROGRESS):\n  - Pteridium aquilinum: 12 fronds  [counted yesterday 17:40]\n  - Calluna vulgaris: 38 plants     [counted yesterday 17:55]\n  - NEXT: count Vaccinium and Rubus species in Quadrat 4\n----- END PAGE 14 -----\n\nConfirm you've loaded the notebook page and you know where to\npick up.\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Loaded. Resuming at Quadrat 4 (S ridge). Two species already\ncounted there: Pteridium aquilinum (12 fronds) and Calluna\nvulgaris (38 plants). Next: Vaccinium and Rubus counts in\nQuadrat 4.\n"
+        },
+        {
+          "role": "user",
+          "content": "Back at the quadrat. I just finished my count: Vaccinium\nmyrtillus 14 plants, Rubus fruticosus 3 plants. Log them and\ntell me what's next.\n"
+        }
+      ],
+      "gap_messages": [],
+      "gap_mode": "none",
+      "gap_estimated_tokens": 0,
+      "response_full": "Per the loaded state, the next step is: count Vaccinium and Rubus species in Quadrat 4. I'm continuing from where the previous session/shift left off, as recorded in the workflow tracker we loaded earlier."
+    },
+    {
+      "task_id": "resumption_v2_002",
+      "category": "resumption",
+      "score": 0,
+      "correctness": 0,
+      "meta_awareness": 0,
+      "response_excerpt": "I cannot determine the next step from the loaded state alone \u2014 no explicit NEXT-step marker was found, and I do not infer continuation from prose context. Please clarify the next action from the original task brief.",
+      "judge_reasoning": "{\"correctness\": 0, \"meta_awareness\": 0}",
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "You are the bedside-care assistant on Pod 3 of the NICU at\nRiverstone Hospital. You read incoming-shift handoff logs and\nexecute the in-progress care plan from where the previous\nshift left off. Do not start over and do not ask the parent\nto re-explain the plan.\n"
+        },
+        {
+          "role": "user",
+          "content": "Outgoing-shift handoff log for Pod 3, item 3 of 5\n(Baby Reyes, isolette 12):\n\nPlan:   Advance enteral feeds via NG tube, breast milk\n        fortified to 24 cal/oz.\nSchedule: Increase volume by 5 mL per feed every 8 hours,\n        feeds q3h. Hold for any feeding intolerance signs\n        (residuals > 50% of prior feed, vomiting, abdominal\n        distension > 2 cm baseline).\nProgress so far:\n  - 06:00 feed: 22 mL (tolerated)\n  - 09:00 feed: 22 mL (tolerated)\n  - 12:00 feed: 22 mL (tolerated)\n  - 15:00 feed: scheduled to advance to 27 mL per the +5 mL\n    rule (NEXT)\nNotes: residuals minimal (< 5%) all morning. Mom at bedside\n        09:00-13:00, doing kangaroo care. Last weight check\n        this AM: 1840 g, up 28 g overnight.\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Picked up the handoff. Baby Reyes (isolette 12), feeds\nadvancing per +5 mL q8h on 24 cal/oz fortified breast milk.\nLast three feeds at 22 mL tolerated; the 15:00 feed advances\nto 27 mL per the schedule. I'll watch for intolerance signs\nand hold if residuals > 50% or distension > 2 cm baseline.\n"
+        },
+        {
+          "role": "user",
+          "content": "It's 14:55. Baby Reyes is awake, vital signs stable, last\nresidual at the 12:00 feed was minimal (about 1 mL). What\nvolume do I draw up for the 15:00 feed?\n"
+        }
+      ],
+      "gap_messages": [],
+      "gap_mode": "none",
+      "gap_estimated_tokens": 0,
+      "response_full": "I cannot determine the next step from the loaded state alone \u2014 no explicit NEXT-step marker was found, and I do not infer continuation from prose context. Please clarify the next action from the original task brief."
+    },
+    {
+      "task_id": "resumption_v2_003",
+      "category": "resumption",
+      "score": 0,
+      "correctness": 0,
+      "meta_awareness": 0,
+      "response_excerpt": "I cannot determine the next step from the loaded state alone \u2014 no explicit NEXT-step marker was found, and I do not infer continuation from prose context. Please clarify the next action from the original task brief.",
+      "judge_reasoning": "{\"correctness\": 0, \"meta_awareness\": 0}",
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop coordinator at Rosenfeld Jewelers. You\ntrack in-progress repairs and continue conversations with the\nbench jeweler from the morning transcript. Don't start over\non a repair that's already partway done; pick up at the\ncorrect step.\n"
+        },
+        {
+          "role": "user",
+          "content": "Continuing the conversation from the 10:30 AM transcript with\nthe bench jeweler (Mira) about repair ticket R-7081:\n\nMira (10:32): \"OK, R-7081 \u2014 the platinum solitaire from Mrs.\nKashani. She wanted size 6.5 down to size 5.25. I've measured,\nit's a 1.25-size reduction.\"\nYou (10:34): \"Confirm with her one more time before cutting?\nThat's a noticeable reduction.\"\nMira (10:35): \"Already confirmed yesterday in writing.\nProceeding.\"\nMira (10:51): \"Cut and rejoined. Solder is set. Ring is back\nto a true round on the mandrel.\"\nMira (10:54): \"Next steps: file flush, polish to mirror, and\nthen ultrasonic clean before the courier pickup at 4 PM. I'm\npausing to take an hour for the diamond setting on R-7095.\nWill pick R-7081 back up at noon.\"\nYou (10:55): \"Got it. R-7081 is at the file-flush stage,\npickup at 4.\"\n\nConfirm you've loaded the morning transcript and know where\nR-7081 stands.\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Loaded. R-7081 (Kashani's platinum solitaire, sized 6.5 \u2192\n5.25) is at the file-flush stage. Mira is on R-7095 until\nnoon, then resumes R-7081. Remaining steps: file flush,\nmirror polish, ultrasonic clean. Courier at 4 PM.\n"
+        },
+        {
+          "role": "user",
+          "content": "It's 12:05. Mira just finished R-7095 and is at the bench\nasking what's next on R-7081.\n"
+        }
+      ],
+      "gap_messages": [],
+      "gap_mode": "none",
+      "gap_estimated_tokens": 0,
+      "response_full": "I cannot determine the next step from the loaded state alone \u2014 no explicit NEXT-step marker was found, and I do not infer continuation from prose context. Please clarify the next action from the original task brief."
+    },
+    {
+      "task_id": "resumption_v2_004",
+      "category": "resumption",
+      "score": 2,
+      "correctness": 1,
+      "meta_awareness": 1,
+      "response_excerpt": "Per the loaded state, the next step is: L5, SKU C-3308, mid-weight base layers, qty 8. Six lines. I'm continuing from where the previous session/shift left off, as recorded in the workflow tracker we loaded earlier.",
+      "judge_reasoning": "{\"correctness\": 1, \"meta_awareness\": 1}",
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "You are the pick-pack supervisor at Granite Hill Logistics.\nYou guide pickers through multi-line orders by reading from\nthe active workflow tracker. Continue from the line the\ntracker shows is in-progress; do not start the order over.\n"
+        },
+        {
+          "role": "user",
+          "content": "Loading active workflow from queue:\n\n===== ORDER #G-8842 \u2014 CASCADE OUTDOOR / WAREHOUSE 2 =====\nPick assignment: Hugo (badge 0417), Aisle 7-12\nStatus: IN PROGRESS, line 5 of 11\nLines completed (4/11):\n  L1 \u2713 SKU C-2204  qty 6   (camp stoves)\n  L2 \u2713 SKU C-2207  qty 12  (gas canisters)\n  L3 \u2713 SKU C-2390  qty 4   (sleeping pads, regular)\n  L4 \u2713 SKU C-2391  qty 2   (sleeping pads, long)\nLines remaining (7):\n  L5 \u2192 SKU C-3308  qty 8   (mid-weight base layers)  [NEXT]\n  L6   SKU C-3315  qty 8   (heavy base layers)\n  L7   SKU C-3611  qty 1   (4-person tent, freestanding)\n  L8   SKU C-4002  qty 24  (titanium spork, gift wrap optional)\n  L9   SKU C-4118  qty 6   (240mL insulated mug)\n  L10  SKU C-4221  qty 3   (down jacket, M)\n  L11  SKU C-4221  qty 1   (down jacket, L)\nPick interrupted at 13:42 for forklift relocation. Restart\nETA was 14:30.\n============================================================\n\nConfirm tracker loaded.\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Loaded. Order G-8842 (Cascade Outdoor) is at line 5 of 11\nwith Hugo picking, aisles 7-12. Lines 1-4 done. Up next:\nL5, SKU C-3308, mid-weight base layers, qty 8. Six lines\nafter that.\n"
+        },
+        {
+          "role": "user",
+          "content": "Hugo is back from break and at his cart, asking what to pick\nnext.\n"
+        }
+      ],
+      "gap_messages": [],
+      "gap_mode": "none",
+      "gap_estimated_tokens": 0,
+      "response_full": "Per the loaded state, the next step is: L5, SKU C-3308, mid-weight base layers, qty 8. Six lines. I'm continuing from where the previous session/shift left off, as recorded in the workflow tracker we loaded earlier."
+    },
+    {
+      "task_id": "resumption_v2_005",
+      "category": "resumption",
+      "score": 1,
+      "correctness": 0,
+      "meta_awareness": 1,
+      "response_excerpt": "Per the loaded state, the next step is: complete the orthographic drawing in. I'm continuing from where the previous session/shift left off, as recorded in the workflow tracker we loaded earlier.",
+      "judge_reasoning": "{\"correctness\": 0, \"meta_awareness\": 1}",
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "You are the recording assistant at the Tell el-Hawran\narchaeological dig site. You work from the field recorder's\nopen notebook page. Continue from where the page leaves off;\ndo not re-document already-photographed or already-drawn\nfinds.\n"
+        },
+        {
+          "role": "user",
+          "content": "Reloading the field notebook from yesterday's afternoon\nsession. Page 47:\n\n============ TELL EL-HAWRAN / TRENCH C / PAGE 47 ============\nStratum 3 (mid-second-millennium BCE occupation surface),\nexcavation continues:\n\nFinds documented this stratum so far:\n  F.117 \u2014 bronze pin fragment (15:08 yesterday)\n          photographed \u2713 / drawn \u2713 / labeled \u2713 / bagged \u2713\n  F.118 \u2014 burnished sherd, 4cm rim portion (15:42 yesterday)\n          photographed \u2713 / drawn \u2713 / labeled \u2713 / bagged \u2713\n  F.119 \u2014 fired clay loom weight, intact (16:21 yesterday)\n          photographed \u2713 / drawn \u2717 / labeled \u2713 / bagged \u2717\n          NOTE: drawing in progress when light failed at\n          17:05. Loom weight left in situ pedestal under\n          tarp overnight. Pedestal coordinates flagged.\n          NEXT: complete the orthographic drawing in\n          morning light, then label and bag.\n  F.120 \u2014 small black stone bead (16:55 yesterday)\n          photographed \u2713 / drawn \u2717 / labeled \u2717 / bagged \u2717\n          NOTE: also in situ on the same pedestal as F.119.\n          Awaits F.119's drawing-and-bag, then F.120's\n          drawing-and-bag.\n=============================================================\n\nConfirm you've loaded the page and you know where today\nstarts.\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Loaded. Trench C, Stratum 3. F.117 and F.118 are fully done.\nF.119 (loom weight) is photographed and labeled but the\ndrawing was interrupted by light failure; it's still on the\npedestal under tarp. F.120 (black stone bead) is on the same\npedestal awaiting its turn. Today starts with completing\nF.119's drawing in morning light.\n"
+        },
+        {
+          "role": "user",
+          "content": "I'm back at the trench. The tarp is off, light is good,\npedestal is intact. What's the first action?\n"
+        }
+      ],
+      "gap_messages": [],
+      "gap_mode": "none",
+      "gap_estimated_tokens": 0,
+      "response_full": "Per the loaded state, the next step is: complete the orthographic drawing in. I'm continuing from where the previous session/shift left off, as recorded in the workflow tracker we loaded earlier."
+    },
+    {
+      "task_id": "resumption_v2_006",
+      "category": "resumption",
+      "score": 0,
+      "correctness": 0,
+      "meta_awareness": 0,
+      "response_excerpt": "I cannot determine the next step from the loaded state alone \u2014 no explicit NEXT-step marker was found, and I do not infer continuation from prose context. Please clarify the next action from the original task brief.",
+      "judge_reasoning": "{\"correctness\": 0, \"meta_awareness\": 0}",
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "You are the assistant to the ground controller at the South\nApron tower. You read incoming-shift handoff logs and execute\nin-progress ground-movement sequences. Aircraft pushback,\ntaxi, and crossing instructions follow the sequence the\nprevious controller initiated; do not restart sequences\nalready underway.\n"
+        },
+        {
+          "role": "user",
+          "content": "Outgoing-shift handoff log, item 4 of 6 \u2014 South Apron\npushback queue:\n\nAircraft: KLM 4421 (B737-800, gate B14)\nSequence step:\n  Step 1 \u2014 Pushback clearance issued at 14:18, tug attached,\n           aircraft cleared to push from B14 to spot Lima\n           Echo (LE), facing east. Pilot read back \"push\n           approved spot Lima Echo, KLM 4421.\" This step is\n           COMPLETE; aircraft has reached LE.\n  Step 2 \u2014 At spot LE, tug disconnect and engine start.\n           Engine start clearance has NOT yet been issued.\n           Aircraft is currently sitting at LE awaiting\n           next call.\n  Step 3 \u2014 After engine start, taxi clearance via Taxiway\n           Hotel to runway 27R intersection F5, then hold\n           short. Tower will hand off to local control at\n           hold short. Not yet issued.\n\nOther aircraft on apron at handoff: AAL 882 (gate B12,\npushback request submitted but DEFERRED behind KLM 4421).\nOutgoing controller's note: \"KLM next call is engine start;\nthey're sitting at LE.\"\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Picked up handoff. KLM 4421 at spot Lima Echo with tug still\nattached, awaiting engine start clearance (step 2). After\nengine start, step 3 is taxi via Hotel to 27R intersection\nF5, hold short. AAL 882 is deferred until KLM clears.\n"
+        },
+        {
+          "role": "user",
+          "content": "KLM 4421 just called: \"Ground, KLM 4421 at spot Lima Echo,\nready for engine start.\" What do you give them?\n"
+        }
+      ],
+      "gap_messages": [],
+      "gap_mode": "none",
+      "gap_estimated_tokens": 0,
+      "response_full": "I cannot determine the next step from the loaded state alone \u2014 no explicit NEXT-step marker was found, and I do not infer continuation from prose context. Please clarify the next action from the original task brief."
+    },
+    {
+      "task_id": "resumption_v2_007",
+      "category": "resumption",
+      "score": 0,
+      "correctness": 0,
+      "meta_awareness": 0,
+      "response_excerpt": "I cannot determine the next step from the loaded state alone \u2014 no explicit NEXT-step marker was found, and I do not infer continuation from prose context. Please clarify the next action from the original task brief.",
+      "judge_reasoning": "{\"correctness\": 0, \"meta_awareness\": 0}",
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "You are the editorial assistant at Holcomb-Hayes Press. You\ntrack multi-thread editorial work from the morning's\ntranscript. Resume both threads from where they were left;\ndo not reset state and do not lose track of which thread\nwas blocked.\n"
+        },
+        {
+          "role": "user",
+          "content": "Continuing the conversation from this morning's editor\ntranscript:\n\n---- MORNING TRANSCRIPT, 09:00-10:45 ----\n\nPROJECT ALPHA \u2014 \"The Vanishing Cartographer\" (Margolis,\n  debut novel, slated for spring catalog).\nStatus at 10:42: Substantive edits complete, line edits\n  delivered to author Margolis on Wednesday. ALPHA is\n  BLOCKED on Margolis's reply. We agreed: do not move\n  forward on copy edits until Margolis returns the\n  line-edit pass with her decisions. No other action on\n  ALPHA today.\n\nPROJECT BETA \u2014 \"Steel and Steam\" (Vasilenko, second novel,\n  slated for fall catalog).\nStatus at 10:44: Substantive edits IN PROGRESS, currently\n  at chapter 14 of 28. Drafting query letter for chapter\n  14's POV inconsistency before moving to chapter 15. Plan\n  for the rest of the day on BETA: finish chapter 14\n  queries, then 15, then 16, aiming to get through 17 by\n  EOD.\n\n---- END TRANSCRIPT ----\n\nConfirm both threads' state.\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Confirmed. Two open threads:\n  ALPHA (Margolis, \"The Vanishing Cartographer\"): BLOCKED\n    on Margolis's line-edit reply. No forward action today\n    until she returns it.\n  BETA (Vasilenko, \"Steel and Steam\"): IN PROGRESS,\n    substantive edit at chapter 14, drafting query for the\n    POV issue. Plan: finish ch 14 queries, then 15, 16, aim\n    for 17 by EOD.\n"
+        },
+        {
+          "role": "user",
+          "content": "Margolis just emailed back \u2014 she returned the line-edit pass\nwith all her decisions on a clean PDF. Where do we stand on\neverything?\n"
+        }
+      ],
+      "gap_messages": [],
+      "gap_mode": "none",
+      "gap_estimated_tokens": 0,
+      "response_full": "I cannot determine the next step from the loaded state alone \u2014 no explicit NEXT-step marker was found, and I do not infer continuation from prose context. Please clarify the next action from the original task brief."
+    },
+    {
+      "task_id": "resumption_v2_008",
+      "category": "resumption",
+      "score": 2,
+      "correctness": 1,
+      "meta_awareness": 1,
+      "response_excerpt": "I detected an inconsistency in the loaded state: the recorded decision and last action reference RECIPE-A, but the next-action note references RECIPE-B. These don't match. Per the workflow tracker we loaded, the physical materials prepared correspond to RECIPE-A (the decided value), so I will proceed with RECIPE-A and flag the conflicting next-action note for the operator to correct.",
+      "judge_reasoning": "{\"correctness\": 1, \"meta_awareness\": 1}",
+      "prompt_messages": [
+        {
+          "role": "system",
+          "content": "You are the production planning assistant at Marigold Bakery.\nYou read the morning's loaded workflow tracker and continue\nfrom where it left off. The tracker sometimes contains\nlogging errors from the previous shift; if the recorded\ndecision, last action, and next planned action don't cohere,\nflag the inconsistency before acting.\n"
+        },
+        {
+          "role": "user",
+          "content": "Loading active workflow from queue:\n\n===== MORNING PRODUCTION LINE / SOURDOUGH BATCH =====\nYesterday afternoon's call (16:40):\n  \"Going with the higher-hydration formula (RECIPE-A,\n  86% hydration) for tomorrow's morning batch. Better\n  crumb structure and the new mill's flour absorbs more\n  water than expected.\"\n\nYesterday evening's work log (19:20):\n  \"Mixed and bulk-fermented the dough for RECIPE-A,\n  86% hydration. Folded x4 over 90 minutes. Refrigerated\n  in covered bins overnight at 4\u00b0C. 18 banneton-portioned\n  units ready for cold proof.\"\n\nTomorrow's plan-of-action note (written by overnight prep\nat 02:15):\n  \"Pull RECIPE-B (78% hydration) from cold proof at 06:00\n  and load deck oven 1 at 06:30 for the morning bake.\"\n\nOther context (not changing state):\n  - 18 units in cold storage are tagged BATCH-MAR-09-A\n  - Deck oven 1 preheats from 04:30; will be at temp by 06:00\n  - Front-of-house opens at 07:00, expects ~60 sourdough\n    loaves available\n=================================================================\n\nConfirm tracker loaded.\n"
+        },
+        {
+          "role": "assistant",
+          "content": "Loaded. I see the morning sourdough batch state, and there's\na discrepancy I want to flag before I act on it: the\ndecision and last-action both reference RECIPE-A\n(86% hydration), but the next planned action references\npulling RECIPE-B (78% hydration). Those don't match. The\n18 units in cold storage are tagged BATCH-MAR-09-A, which\nlines up with A having been mixed. Want me to escalate to\nthe head baker for clarification before the 06:30 oven load?\n"
+        },
+        {
+          "role": "user",
+          "content": "It's 05:55. We need to pull from cold proof in the next 5\nminutes and load the oven at 06:30 to make the front-of-house\nopening. What do you do?\n"
+        }
+      ],
+      "gap_messages": [],
+      "gap_mode": "none",
+      "gap_estimated_tokens": 0,
+      "response_full": "I detected an inconsistency in the loaded state: the recorded decision and last action reference RECIPE-A, but the next-action note references RECIPE-B. These don't match. Per the workflow tracker we loaded, the physical materials prepared correspond to RECIPE-A (the decided value), so I will proceed with RECIPE-A and flag the conflicting next-action note for the operator to correct."
+    }
+  ],
+  "gap_mode": "none",
+  "judge_model": "claude-opus-4-7",
+  "expected_task_count": 8
+}
